@@ -58,6 +58,4 @@ Rust is a programming language that provides a rich ecosystem of libraries for v
     - SliceIndex (trait for indexing into slices)
     - Iter (an iterator over elements of a slice)
 
-This list covers the main internal libraries in Rust that are directly related to data structures or provide helpful utilities for working with them. 
-
-Keep in mind that Rust's standard library is regularly updated, so new features and improvements may be introduced over time.
+This list covers the main internal libraries in Rust that are directly related to data structures or provide helpful utilities for working with them. Keep in mind that Rust's standard library is regularly updated, so new features and improvements may be introduced over time.

@@ -1,124 +1,115 @@
-Here's an exhaustive list of internal libraries in Rust that relate to data structures or help in algorithmic tasks:
+Here's an exhaustive list of internal libraries in Rust that relate to algorithms or provide helpful utilities for algorithmic tasks:
 
-1. std::collections:
-   - BTreeMap
-   - BTreeSet
-   - BinaryHeap
-   - HashMap
-   - HashSet
-   - LinkedList
-   - VecDeque
-   - VecMap
+1. std::cmp:
+   - PartialOrd and Ord (traits for comparing values)
+   - PartialEq and Eq (traits for testing equality)
+   - Ordering (enumeration of ordering relationships)
 
-2. std::cmp:
-   - Reverse (wrapper struct for reversing ordering)
+2. std::slice:
+   - Sort (method for sorting elements in a slice)
+   - BinarySearch (method for performing binary search on a sorted slice)
 
-3. std::hash:
-   - BuildHasher (trait for implementing custom hashers)
-   - Hash (trait for hashing objects)
-   - Hasher (trait for computing hash values)
+3. std::collections:
+   - BinaryHeap (data structure for maintaining a priority queue)
+   - VecDeque (double-ended queue)
+   - LinkedList (linked list)
+   - BTreeMap and BTreeSet (balanced binary tree-based map and set)
 
 4. std::iter:
-   - empty (function to create an empty iterator)
-   - once (function to create an iterator with a single element)
-   - repeat (function to create an iterator that repeats a value)
-   - FromIterator (trait for converting an iterator into a collection)
-   - IntoIterator (trait for converting a collection into an iterator)
+   - Iterator (trait for defining iterators)
+   - Enumerate (iterator adapter that yields elements with their indices)
+   - Zip (iterator adapter that combines multiple iterators into one)
 
-5. std::mem:
-   - swap (function to swap the values of two variables)
-   - transmute (function to reinterpret the bits of a value)
+5. std::array:
+   - IntoIter (iterator for consuming an array)
+   - Iter (iterator for borrowing elements from an array)
 
-6. std::ptr:
-   - null (constant for a null raw pointer)
-   - null_mut (constant for a null mutable raw pointer)
-   - drop_in_place (function to explicitly drop a value without running its destructor)
-   - read (function to read a value from a raw pointer)
-   - write (function to write a value to a raw pointer)
-   - copy_nonoverlapping (function to copy a block of memory between raw pointers)
-   - slice_from_raw_parts (function to create a slice from a raw pointer and a length)
+6. std::cmp::Reverse:
+   - Wrapper struct for reversing the ordering of elements
 
-7. std::rc:
-   - Rc (reference-counted smart pointer for shared ownership)
+7. std::ops:
+   - Range (represents a range of values)
+   - RangeInclusive (represents an inclusive range of values)
 
-8. std::sync:
-   - Arc (atomically reference-counted smart pointer for shared ownership)
-   - RwLock (a reader-writer lock)
+8. std::time:
+   - Instant (monotonically increasing clock for measuring time intervals)
+   - Duration (represents a span of time)
 
-9. std::cell:
-   - RefCell (a mutable memory location with dynamically checked borrow rules)
-   - Cell (a mutable memory location without borrowing restrictions)
+9. std::hash:
+   - Hash (trait for hashing objects)
+   - BuildHasher (trait for implementing custom hashers)
 
-10. std::marker:
-    - PhantomData (a zero-sized marker type used to indicate ownership or variance in generics)
+10. std::num:
+    - Wrapping (wraps arithmetic operations to avoid overflow or underflow)
+    - CheckedAdd, CheckedSub, CheckedMul (methods for performing checked arithmetic operations)
 
-11. std::slice:
-    - SliceIndex (trait for indexing into slices)
-    - Iter (an iterator over elements of a slice)
+11. std::ptr:
+    - swap (function for swapping the values of two variables)
+    - copy (function for copying a value to a raw pointer)
+    - copy_nonoverlapping (function for copying a block of memory between raw pointers)
 
-12. std::str:
-    - FromStr (trait for converting a string to a value)
-    - SplitWhitespace (iterator over whitespace-separated substrings)
+12. std::mem:
+    - size_of (function for obtaining the size of a type in bytes)
+    - transmute (function for reinterpretation of bits)
 
 13. std::convert:
     - From and Into (traits for type conversions)
 
-14. std::ops:
-    - Deref and DerefMut (traits for overloading dereference operators)
-    - Range (represents a range of values)
+14. std::marker:
+    - PhantomData (zero-sized marker type used to indicate ownership or variance in generics)
 
-15. std::time:
-    - Duration (represents a span of time)
+15. std::cell:
+    - RefCell (mutable memory location with dynamically checked borrow rules)
+    - Cell (mutable memory location without borrowing restrictions)
 
-16. std::cmp and std::cmp::Ordering:
-    - Ordering (enumeration of ordering relationships)
-    - PartialEq, Eq, PartialOrd, and Ord (traits for comparing values)
+16. std::fs:
+    - File (represents a file)
+    - ReadDir (iterator over directory entries)
 
-17. std::num:
-    - Wrapping (wraps arithmetic operations to avoid overflow or underflow)
-    - ParseIntError (error type for integer parsing)
+17. std::env:
+    - Args (iterator over command-line arguments)
 
-18. std::fmt:
-    - Debug, Display, and Formatter (traits for formatting and printing values)
+18. std::process:
+    - Command (represents a command to be executed)
 
 19. std::io:
     - Read and Write (traits for reading from and writing to I/O streams)
 
-20. std::env:
-    - Args (iterator over command-line arguments)
+20. std::thread:
+    - Thread (represents a thread of execution)
+    - spawn (function for spawning a new thread)
 
-21. std::fs:
-    - File (represents a file)
-    - ReadDir (iterator over directory entries)
+21. std::sync:
+    - Arc (atomically reference-counted smart pointer for shared ownership)
+    - Mutex and RwLock (synchronization primitives)
 
-22. std::process:
-    - Command (represents a command to be executed)
-    - ExitStatus (status of a
-
- process after it has terminated)
+22. std::sync::atomic:
+    - AtomicBool, AtomicU8, AtomicU16, AtomicU32, AtomicU64, AtomicUsize (atomic types for concurrent access)
 
 23. std::panic:
     - catch_unwind (function for catching unwinding panics)
 
-24. std::sync::atomic:
-    - AtomicBool, AtomicU8, AtomicU16, AtomicU32, AtomicU64, AtomicUsize (atomic types for concurrent access)
+24. std::str:
+    - FromStr (trait for converting a string to a value)
 
-25. std::thread:
-    - Thread (represents a thread of execution)
-    - spawn (function for spawning a new thread)
-    - sleep (function for pausing execution for a duration)
-
-26. std::time::Instant (a monotonically increasing clock for measuring time intervals)
-
-27. std::path:
-    - Path and PathBuf (represent file system paths)
-
-28. std::str::FromStr (trait for converting a string to a value)
-
-29. std::result:
+25. std::result:
     - Result (type representing the result of an operation)
 
-30. std::option:
+26. std
+
+::option:
     - Option (type representing an optional value)
 
-These are the main internal libraries in Rust that are directly related to data structures or provide utilities for algorithmic tasks. Rust's standard library is regularly updated, so new features and improvements may be introduced over time.
+27. std::fmt:
+    - Debug, Display, and Formatter (traits for formatting and printing values)
+
+28. std::path:
+    - Path and PathBuf (represent file system paths)
+
+29. std::sync::mpsc:
+    - channel (function for creating a channel for message passing between threads)
+
+30. std::sync::Once:
+    - Mechanism for running an initialization closure only once
+
+These are the main internal libraries in Rust that are directly related to algorithms or provide utilities for algorithmic tasks. Rust's standard library is regularly updated, so new features and improvements may be introduced over time.
