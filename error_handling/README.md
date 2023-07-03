@@ -53,9 +53,7 @@ Here's an exhaustive list of functions and methods in Rust that are commonly use
 
 14. `unwrap_or_default` method:
     - Syntax: `Option<T>.unwrap_or_default()`
-    - Description: Extracts the value from an `Option
-
-`, returning it if it is `Some`, or returns the default value of the type if it is `None`.
+    - Description: Extracts the value from an `Option`, returning it if it is `Some`, or returns the default value of the type if it is `None`.
 
 15. `Option` type:
     - Description: Represents an optional value that can either be `Some(value)` with a value of type `T`, or `None` indicating the absence of a value.
